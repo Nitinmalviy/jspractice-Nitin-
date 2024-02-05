@@ -1,0 +1,15 @@
+class User{
+    constructor(username)
+    {
+        this.username = username;
+    }
+
+    logMe(){
+
+    }
+
+    createUser(){
+
+    }
+
+}

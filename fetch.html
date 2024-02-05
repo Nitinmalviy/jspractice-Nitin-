@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fetchUserData()">Click to fetch User Data</button>
+
+    <div id="userList"></div>
+    <script>
+        function createUserElement(user) {
+            const userElement = document.createElement("div");
+            userElement.classList.add("user");
+
+            userElement.innerHTML = `<p>Username: ${user.username}</p>
+                                    <p>Password: ${user.password}</p>
+                                    <p>Gender: ${user.gender}</p>`;
+
+            // Append the created userElement to the DOM
+            document.getElementById("userList").appendChild(userElement);
+        }
+
+        const fetchUserData = () => {
+            fetch('userData.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Some problem occurred while fetching data");
+                }
+                return response.json();
+            })
+            .then(data => {
+                data.forEach(user => {  // Fix here: Change data.array to data.users
+                    createUserElement(user);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+        }
+
+        // Do not call fetchUserData here, as it will be called by the button click
+    </script>
+</body>
+</html>

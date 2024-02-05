@@ -1,0 +1,52 @@
+[
+    {
+      "username": "JohnDoe",
+      "password": "p@ssw0rd",
+      "gender": "male"
+    },
+    {
+      "username": "JaneSmith",
+      "password": "12345678",
+      "gender": "female"
+    },
+    {
+      "username": "MikeJohnson",
+      "password": "M1k3P@ss",
+      "gender": "male"
+    },
+    {
+      "username": "EmilyDavis",
+      "password": "Em1ly123",
+      "gender": "female"
+    },
+    {
+      "username": "ChrisWilson",
+      "password": "Cw123456",
+      "gender": "male"
+    },
+    {
+      "username": "SarahBrown",
+      "password": "S@r@hB",
+      "gender": "female"
+    },
+    {
+      "username": "AlexMiller",
+      "password": "A1exM",
+      "gender": "male"
+    },
+    {
+      "username": "OliviaTaylor",
+      "password": "Oliv1@T",
+      "gender": "female"
+    },
+    {
+      "username": "DavidClark",
+      "password": "D@v1dC",
+      "gender": "male"
+    },
+    {
+      "username": "SophiaHarris",
+      "password": "S0ph1@H",
+      "gender": "female"
+    }
+  ]

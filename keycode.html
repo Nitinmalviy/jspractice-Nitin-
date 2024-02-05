@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: navy;
+            border-radius: 20px;
+            color: white;
+            height: 30px;
+            width: 100px;
+            font-size: 18px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body id="background">
+
+
+    <div id="project">
+
+        <div id="insert">
+            <div class="key">
+
+            </div>
+        </div>
+       
+
+    </div>
+
+    <script>
+
+        const insert = document.getElementById('insert');
+        window.addEventListener('keydown', (e) => {
+            insert.innerHTML = `
+            <div class="color">
+            <table>
+            <tr>
+                <th>Key</th>
+                <th>keycode</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td>${e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tr>
+            
+            </table>
+            </div>
+            `
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jeson.js"></script>
+</head>
+<body>
+    <table cellspacing="1" border="2">
+        <th>
+            
+           <script>
+            
+            const jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+
+            const jsonObject = JSON.parse(jsonString);
+
+                for (const key in jsonObject) {
+                    document.write("<tr>");
+                    document.write(`<td>${key}</td>`);
+                    document.write(`<td>${jsonObject[key]}</td>`);
+                    document.write("</tr>");
+                }
+
+           </script>
+        </th>
+    </table>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+
+        button {
+            background-color: navy;
+            border-radius: 20px;
+            color: white;
+            height: 30px;
+            width: 100px;
+            font-size: 18px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body id="background">
+
+
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <script>
+        let intervalId;
+        let bg = document.querySelector('#background');
+
+        const randomcolor = function()
+        {
+            const hexcode = "0123456789ABCDEF";
+            let color = '#';
+
+            for(let i = 0; i<6; i++)
+            {
+                color += hexcode[Math.floor(Math.random() * 16)]; 
+                // console.log();
+            }
+
+            return color;
+        }
+
+        const startchangingColor = function(){
+
+            let changbg = function(){
+            bg.style.backgroundColor = randomcolor();
+            }
+
+            if(!intervalId)
+            {
+                intervalId = setInterval(changbg,300);
+            }
+
+        }
+
+        document.querySelector('#start').addEventListener('click',startchangingColor);
+
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(intervalId);
+            intervalId = null;
+        });
+
+
+    //     let intervalId;
+    // let bg = document.querySelector('#background');
+
+    // document.querySelector('#start').addEventListener('click', function () {
+    //   console.log("Console log");
+      
+    //   intervalId = setInterval(() => {
+    //     const colors = ['red', 'blue', 'green', 'pink', 'orange', 'yellow'];
+    //     const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    //     bg.style.backgroundColor = randomColor;
+    //     console.log("Nitin");
+    //   }, 1000);
+    // });
+
+    </script>
+</body>
+
+</html>

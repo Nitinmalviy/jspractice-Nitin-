@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form action="" id="myform" method="get">
+            <input type="text" id="githubId" placeholder="Enter your GitHub ID">
+            <button cla type="button" onclick="getDetails()">Get Details</button>
+        </form>
+
+    </div>
+    <div>
+        <img id="myImage" alt="Dynamic Image">
+
+        <div>
+            <h3>Foloowers</h3>
+            <h4 id="followersCount"></h4>
+        </div>
+    </div>
+</body>
+
+<script>
+    function getDetails() {
+       
+        var githubId = document.getElementById("githubId").value;
+        const requestUrl = `https://api.github.com/users/${githubId}`;
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function () {
+
+            console.log(xhr.readyState);
+            console.log(this.responseText);
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText);
+
+                let myImage = document.getElementById('myImage');
+                let followersCount = document.getElementById('followersCount');
+
+                myImage.src = data.avatar_url;
+                console.log(`imag : ${myImage}`);
+                followersCount.innerHTML = data.followers;
+
+            }
+        }
+
+        xhr.send();
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Ocean Of art</h3>
+
+
+    <button id="stop">Stop</button>
+
+    <script>
+    // const heading = ""
+    const addHeading = setTimeout(function(){
+        document.querySelector('H3').innerHTML = "Tech Phoenix"
+
+    },4000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(addHeading);
+        console.log('stopped');
+    })
+    
+    </script>
+</body>
+</html>
